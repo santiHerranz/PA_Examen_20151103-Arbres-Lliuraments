@@ -14,38 +14,45 @@ public class Main {
             pa.AfegirEstudiant(e1);
             pa.AfegirEstudiant(e2);
 
-            Lliurament ll1 = new Lliurament(1,true);
-            ll1.setQualificacio(8.5);
-            e2.addLliurament(ll1);
-
-            Lliurament ll2 = new Lliurament(2,false);
-            ll2.setQualificacio(10);
-            e2.addLliurament(ll2);
 
             Lliurament ll3 = new Lliurament(3,false);
             ll3.setQualificacio(9.5);
             e1.addLliurament(ll3);
 
-            Lliurament ll4 = new Lliurament(4,false);
-            ll4.setQualificacio(5);
-            e2.addLliurament(ll4);
+            Lliurament e1_ex1 = new Lliurament(1,true);
+            e1_ex1.setQualificacio(9.5);
+            e1.addLliurament(e1_ex1);
 
-            e2.remLliurament(ll2);
+
+            Lliurament e2_p1 = new Lliurament(1,true);
+            e2_p1.setQualificacio(7.5);
+            e2.addLliurament(e2_p1);
+
+            Lliurament e2_p2 = new Lliurament(2,false);
+            e2_p2.setQualificacio(10);
+            e2.addLliurament(e2_p2);
+
+            Lliurament e2_p3 = new Lliurament(4,false);
+            e2_p3.setQualificacio(5);
+            e2.addLliurament(e2_p3);
+
+            Lliurament e2_ex1 = new Lliurament(1,true);
+            e2_ex1.setQualificacio(8.5);
+            e2.addLliurament(e2_ex1);
+
+
+            e2.remLliurament(e2_p2);
 
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+        System.out.println("\nAlumnes\n");
+        System.out.println(e1);
+        System.out.println(e2);
 
-        System.out.println("UPC "+ pa.matriculatsDeCadaPla()[0]);
-        System.out.println("UPF "+ pa.matriculatsDeCadaPla()[1]);
 
-        try {
-            System.out.println("Santi Notafinal = "+ pa.obtenirNotafinal(433456789));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
     }
 }

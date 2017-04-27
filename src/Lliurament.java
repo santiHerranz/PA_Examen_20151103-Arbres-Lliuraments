@@ -17,4 +17,14 @@ public class Lliurament{
     public double getQualificacio(){ return qualificacio;}
     public int getCodi(){ return codi;}
     public boolean getExamen(){ return examen;}
+
+
+    @Override
+    public String toString() {
+        String s = " Lliurament:";
+        s += String.format("\tcodi: %s",codi) ;
+        s += String.format("\texamen: %s",(examen?"SI":"NO")) ;
+        s += String.format("\tqualificacio: %.2f",qualificacio) ;
+        return s;
+    }
 }

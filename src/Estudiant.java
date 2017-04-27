@@ -55,7 +55,7 @@ public class Estudiant implements Comparable{
         boolean trobat = false;
 
         while (!trobat && aux.seg != null) {
-            if (ll.getCodi() == aux.ll.getCodi())
+            if (ll.getCodi() == aux.seg.ll.getCodi())
                 trobat = true;
             else
                 aux = aux.seg;
@@ -109,4 +109,24 @@ public class Estudiant implements Comparable{
         return dni>((Estudiant)c).dni;}
     public boolean MenorQue(Comparable c){
         return dni<((Estudiant)c).dni;}
+
+
+
+    public String toString() {
+        String s = "Estudiant: "+ nom +"\n";
+        s += String.format("Lliuraments:\n%s\n", llistar(qualificacions)) ;
+        s += String.format("Final: %.2f", calculaFinal()) ;
+        return  s ;
+    }
+
+    private static String llistar(Node qualificacions){
+        String s = "";
+        Node aux=qualificacions;
+        while (aux!=null) {
+            s += ((Lliurament)aux.ll).toString() +"\n";
+            aux=aux.seg;
+        }
+        return s;
+    }
+
 } // fi classe
